@@ -7,10 +7,12 @@ from selenium.webdriver import Firefox, Chrome, PhantomJS
 from selenium import webdriver
 from argparse import ArgumentParser
 from urllib.parse import quote
+from urllib import request
 import time
 import copy
 import sys
 import os
+import json
 
 TIMEOUT = 20
 TIMESLP = 3
@@ -207,9 +209,16 @@ def fill_in(driver, campus, reason, habitation, district, street):
 
     print('入校备案填报完毕！')
 
+def wechat_notification(userName, sckey):
+    with request.urlopen(quote('https://sc.ftqq.com/'+sckey+'.send?text=成功报备&desp=学号'+str(userName)+'成功报备', safe='/:?=&')) as response:
+        response = json.loads(response.read().decode('utf-8'))
+    if response['errmsg'] == 'success':
+        print('微信通知成功！')
+    else:
+        print(str(response['errno']) + ' error: ' + response['errmsg'])
 
 def run(driver, username, password, campus, reason, destination, track,
-        habitation, district, street):
+        habitation, district, street, wechat, sckey):
     login(driver, username, password)
     print('=================================')
 
@@ -219,6 +228,11 @@ def run(driver, username, password, campus, reason, destination, track,
 
     go_to_application_in(driver)
     fill_in(driver, campus, reason, habitation, district, street)
+
+    if wechat:
+        wechat_notification(userName, sckey)
+    
+    print('可以愉快的玩耍啦！')
 
     print('=================================')
     print('可以愉快的玩耍啦！')
@@ -256,6 +270,6 @@ if __name__ == '__main__':
 
     run(driver, args.username, args.password, args.campus, args.reason,
         args.destination, args.track, args.habitation, args.district,
-        args.street)
+        args.street, True, 'SCU97899Tf287ff84693d27d0eb729558e961683c5ebd787c8ddb2')
 
     driver.close()
