@@ -230,7 +230,7 @@ def run(driver, username, password, campus, reason, destination, track,
     fill_in(driver, campus, reason, habitation, district, street)
 
     if wechat:
-        wechat_notification(userName, sckey)
+        wechat_notification(username, sckey)
     
     print('可以愉快的玩耍啦！')
 
