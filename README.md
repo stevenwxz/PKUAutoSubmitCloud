@@ -1,4 +1,4 @@
-> 仅仅是因为自己的repo写有东西所以只能新开一个
+> 仅仅是因为自己的repo写有东西所以只能新开一个, 加入了微信通知功能，也就是需要添加一个secret: Name为SCKEY, Value为xxxxxxxxxxxxx.
 ---
 
 以下为[YOUSIKI](https://github.com/YOUSIKI/PKUAutoSubmit)
