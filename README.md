@@ -1,4 +1,9 @@
-仅仅是因为自己的repo写有东西所以只能新开一个
+> 仅仅是因为自己的repo写有东西所以只能新开一个
+---
+
+以下为[YOUSIKI](https://github.com/YOUSIKI/PKUAutoSubmit)
+
+---
 # PKUAutoSubmit (modified)
 
 **UPDATE 2020/10/18**
@@ -13,7 +18,7 @@
 
 ---
 
-以下为原作者 README
+以下为[原作者](https://github.com/Bruuuuuuce/PKUAutoSubmit) README
 
 ---
 
