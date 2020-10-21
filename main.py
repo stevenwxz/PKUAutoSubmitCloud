@@ -242,6 +242,7 @@ if __name__ == '__main__':
     parser = ArgumentParser()
     parser.add_argument('--username', '-u', type=str, help='用户名')
     parser.add_argument('--password', '-p', type=str, help='密码')
+    parser.add_argument('--sckey', '-s', type=str, help='微信sckey')
     parser.add_argument('--campus', type=str, help='所在校区, 燕园、万柳、畅春园、圆明园、中关新园', default='燕园')
     parser.add_argument('--reason', type=str, help='出校原因, eg. 吃饭', default='吃饭')
     parser.add_argument('--destination', type=str, help='出校目的地, eg. 北京', default='北京')
@@ -270,6 +271,6 @@ if __name__ == '__main__':
 
     run(driver, args.username, args.password, args.campus, args.reason,
         args.destination, args.track, args.habitation, args.district,
-        args.street, True, 'SCU97899Tf287ff84693d27d0eb729558e961683c5ebd787c8ddb2')
+        args.street, True, args.sckey)
 
     driver.close()
