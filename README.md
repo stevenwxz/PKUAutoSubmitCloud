@@ -6,7 +6,7 @@
 ---
 # PKUAutoSubmit (modified)
 
-脱单
+脱单！
 
 **UPDATE 2020/10/18**
 
